@@ -16,6 +16,10 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.integer :second_crack_start
       t.integer :second_crack_end
 
+      t.string  :artisan_json
+
+      t.string  :roast_length_pretty
+
       t.timestamps
     end
   end

@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20180209164029) do
     t.integer "first_crack_end"
     t.integer "second_crack_start"
     t.integer "second_crack_end"
+    t.string "artisan_json"
+    t.string "roast_length_pretty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -4,12 +4,14 @@
   <tr>
     <th>Coffee</th>
     <th>Origin</th>
+    <th>Roast length</th>
   </tr>
  
   <% @profiles.each do |profile| %>
     <tr>
       <td><%= profile.coffee_name %></td>
       <td><%= profile.origin_country %></td>
+      <td><%= profile.roast_length_pretty %></td>
       <td><%= link_to 'Show', profile_path(profile) %></td>
     </tr>
   <% end %>
