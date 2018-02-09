@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180209150230) do
+ActiveRecord::Schema.define(version: 20180209164029) do
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "coffee_name"
+    t.string "origin_country"
+    t.string "origin_farm"
+    t.string "processing_type"
+    t.integer "batch_number"
+    t.integer "roast_length"
+    t.integer "turning_point"
+    t.integer "dry_end"
+    t.integer "first_crack_start"
+    t.integer "first_crack_end"
+    t.integer "second_crack_start"
+    t.integer "second_crack_end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

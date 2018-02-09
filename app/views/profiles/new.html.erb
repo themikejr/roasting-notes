@@ -1,0 +1,17 @@
+<h1>Import a new Roast Profile</h1>
+
+<%= form_with scope: :profile, url: profiles_path, local: true do |form| %>
+  <p>
+    <%= form.label :coffee_name %><br>
+    <%= form.text_field :coffee_name %>
+  </p>
+ 
+  <p>
+    <%= form.label :origin_country %><br>
+    <%= form.text_field :origin_country %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
