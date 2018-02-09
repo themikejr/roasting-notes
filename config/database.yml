@@ -10,8 +10,16 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: db/development.sqlite3
+  adapter: postgresql
+  database: roasting_notes_db_development
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  database: roasting_notes_db_test
+  pool: 5
+  timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,6 +30,6 @@ test:
 
 production:
   adapter: postgresql
-  database: my_database_production
+  database: roasting_notes_db_production
   pool: 5
   timeout: 5000
