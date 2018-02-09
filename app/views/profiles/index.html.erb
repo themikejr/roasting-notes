@@ -1,0 +1,16 @@
+<h1>Profiles</h1>
+ 
+<table>
+  <tr>
+    <th>Coffee</th>
+    <th>Origin</th>
+  </tr>
+ 
+  <% @profiles.each do |profile| %>
+    <tr>
+      <td><%= profile.coffee_name %></td>
+      <td><%= profile.origin_country %></td>
+      <td><%= link_to 'Show', profile_path(profile) %></td>
+    </tr>
+  <% end %>
+</table>

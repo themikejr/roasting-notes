@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
-  <li class='nav-item'><%= link_to 'Import roast', new_profile_path, class: 'nav-link' %></li>
+  <li class='nav-item'><%= link_to 'Import profile', new_profile_path, class: 'nav-link' %></li>
+  <li class='nav-item'><%= link_to 'View Profiles', profiles_path, class: 'nav-link' %></li>
   <li class='nav-item'><%= link_to 'Edit account', edit_user_registration_path, class: 'nav-link' %></li>
   <li class='nav-item'><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete', class: 'nav-link' %></li>
 <% else %>
