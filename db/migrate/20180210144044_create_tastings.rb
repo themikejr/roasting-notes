@@ -6,16 +6,16 @@ class CreateTastings < ActiveRecord::Migration[5.1]
       t.references :user, foreign_key: true
       t.references :origin, foreign_key: true
 
-      t.float :dry_fragrance
-      t.float :wet_aroma
-      t.float :brightness
-      t.float :flavor
-      t.float :body
-      t.float :finish
-      t.float :sweetness
-      t.float :clean_cup
-      t.float :complexity
-      t.float :uniformity
+      t.float "dry_fragrance"
+      t.float "wet_aroma"
+      t.float "flavor"
+      t.float "aftertaste"
+      t.float "acidity"
+      t.float "body"
+      t.float "balance"
+      t.float "sweetness"
+      t.float "uniformity"
+      t.float "cleaniness"
 
       t.string :nose_notes
       t.string :mouth_notes

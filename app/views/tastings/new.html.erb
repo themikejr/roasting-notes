@@ -2,17 +2,47 @@
 
 <%= form_with scope: :tasting, url: tastings_path, local: true do |form| %>
   <%= form.select :origin_id, options_from_collection_for_select(Origin.all, "id", "name") %>
-  <p>
+
+  <div class="container">
+    <div class="row">
+      <div class class="col-md">
+        <div class="form-group">
+          <%= form.label :dry_fragrance %>
+          <%= number_field(:tasting, :dry_fragrance, in: 6.0..10.0, step: 0.25, class: "form-control") %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :wet_aroma %>
+          <%= number_field(:tasting, :wet_aroma, in: 6.0..10.0, step: 0.25, class: "form-control") %>
+        </div>
+      </div>
+
+      <div class class="col-md">
+        <div class="form-group">
+          <%= form.label :flavor %>
+          <%= number_field(:tasting, :flavor, in: 6.0..10.0, step: 0.25, class: "form-control") %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :aftertaste %>
+          <%= number_field(:tasting, :aftertaste, in: 6.0..10.0, step: 0.25, class: "form-control") %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+
+  <div class="form-group">
     <%= form.label :mouth_notes %><br>
     <%= form.text_area :mouth_notes %>
-  </p>
+  </div>
 
-  <p>
+  <div class="form-group>
     <%= form.label :nose_notes %><br>
     <%= form.text_area :nose_notes %>
-  </p>
+  </div>
 
-  <p>
     <%= form.submit %>
-  </p>
 <% end %>
