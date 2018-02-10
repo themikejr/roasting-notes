@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users
-  resources :profiles
+
+  resources :profiles do
+    resources :tastings
+  end
 end

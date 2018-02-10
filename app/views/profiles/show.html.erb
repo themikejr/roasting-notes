@@ -3,7 +3,7 @@
   <div class="progress-bar" role="progressbar" style="width: <%= number_to_percentage(@profile.dry_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
   <div class="progress-bar bg-success" role="progressbar" style="width: <%= number_to_percentage(@profile.malliard_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
   <div class="progress-bar bg-danger" role="progressbar" style="width: <%= number_to_percentage(@profile.development_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
-</div> 
+</div>
 
 <p>
   <strong>Origin Country:</strong>
@@ -40,4 +40,36 @@
     <%= @profile.drop_temp %>
 </p>
 
+<h2>Tastings</h2>
+<% @profile.tastings.each do |tasting| %>
+  <p>
+    <strong>Taster:</strong>
+    <%= tasting.user.name %>
+  </p>
 
+  <p>
+    <strong>Nose:</strong>
+    <%= tasting.nose_notes %>
+  </p>
+
+  <p>
+    <strong>Mouth:</strong>
+    <%= tasting.mouth_notes %>
+  </p>
+<% end %>
+
+<h2>Add a tasting:</h2>
+<%= form_with(model: [ @profile, @profile.tastings.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :nose_notes %><br>
+    <%= form.text_area :nose_notes %>
+  </p>
+
+  <p>
+    <%= form.label :mouth_notes %><br> <%= form.text_area :mouth_notes %> </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'See all profiles', profiles_path %>
