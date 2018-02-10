@@ -12,3 +12,24 @@
   <strong>Roast length:</strong>
     <%= @profile.roast_length_pretty %>
 </p>
+
+<p>
+  <strong>Dry time:</strong>
+    <%= number_to_percentage(@profile.dry_time_percentage * 100, precision: 1) %>
+</p>
+
+<p>
+  <strong>Malliard time:</strong>
+    <%= number_to_percentage(@profile.malliard_time_percentage * 100, precision: 1) %>
+</p>
+
+<p>
+  <strong>Development time:</strong>
+    <%= number_to_percentage(@profile.development_time_percentage * 100, precision: 1)%>
+</p>
+
+<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: <%= number_to_percentage(@profile.dry_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="progress-bar bg-success" role="progressbar" style="width: <%= number_to_percentage(@profile.malliard_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="progress-bar bg-danger" role="progressbar" style="width: <%= number_to_percentage(@profile.development_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
+</div>

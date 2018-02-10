@@ -19,6 +19,14 @@ class ProfilesController < ApplicationController
     json_object = JSON.parse(@profile.artisan_json)
     @profile["roast_length"] = json_object["computed"]["totaltime"]
     @profile["roast_length_pretty"] = seconds_to_time(@profile["roast_length"])
+    @profile["dry_time"] = json_object["computed"]["DRY_time"]
+    @profile["dry_time_percentage"] = percentage(@profile["dry_time"], @profile["roast_length"])
+
+    @profile["malliard_time"] = json_object["computed"]["midphasetime"]
+    @profile["malliard_time_percentage"] = percentage(@profile["malliard_time"], @profile["roast_length"])
+
+    @profile["development_time"] = json_object["computed"]["finishphasetime"]
+    @profile["development_time_percentage"] = percentage(@profile["development_time"], @profile["roast_length"])
 
     @profile.save
     redirect_to @profile
@@ -30,8 +38,15 @@ class ProfilesController < ApplicationController
     end
 
     def seconds_to_time(seconds)
-      puts "about to convert"
       [seconds / 60 % 60, seconds % 60].map { |t| t.to_s.rjust(2,'0') }.join(':')
     end
+
+    def percentage(part, whole)
+      puts "part", part
+      puts "whole", whole
+      puts "attempt", part / whole
+      part / whole 
+    end
+
 
 end

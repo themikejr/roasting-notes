@@ -16,6 +16,13 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.integer :second_crack_start
       t.integer :second_crack_end
 
+      t.float :dry_time
+      t.float :dry_time_percentage
+      t.float :malliard_time
+      t.float :malliard_time_percentage
+      t.float :development_time
+      t.float :development_time_percentage
+
       t.string  :artisan_json
 
       t.string  :roast_length_pretty

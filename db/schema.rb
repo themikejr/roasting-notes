@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 20180209164029) do
     t.integer "first_crack_end"
     t.integer "second_crack_start"
     t.integer "second_crack_end"
+    t.float "dry_time"
+    t.float "dry_time_percentage"
+    t.float "malliard_time"
+    t.float "malliard_time_percentage"
+    t.float "development_time"
+    t.float "development_time_percentage"
     t.string "artisan_json"
     t.string "roast_length_pretty"
     t.datetime "created_at", null: false
