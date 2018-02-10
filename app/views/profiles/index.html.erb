@@ -5,7 +5,7 @@
     <tr>
       <th>Coffee</th>
       <th>Origin</th>
-      <th>Roast length</th>
+      <th>Batch Number</th>
       <th>View profile</th>
     </tr>
   </thead>
@@ -15,7 +15,7 @@
       <tr>
         <td><%= profile.origin.name %></td>
         <td><%= profile.origin.country %></td>
-        <td><%= profile.roast_length_pretty %></td>
+        <td><%= profile.batch_number %></td>
         <td><%= link_to 'View', profile_path(profile) %></td>
       </tr>
      <% end %>
