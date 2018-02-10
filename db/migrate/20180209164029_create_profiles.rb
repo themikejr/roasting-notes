@@ -23,6 +23,9 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.float :development_time
       t.float :development_time_percentage
 
+      t.float :charge_temp
+      t.float :drop_temp
+
       t.string  :artisan_json
 
       t.string  :roast_length_pretty

@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20180209164029) do
     t.float "malliard_time_percentage"
     t.float "development_time"
     t.float "development_time_percentage"
+    t.float "charge_temp"
+    t.float "drop_temp"
     t.string "artisan_json"
     t.string "roast_length_pretty"
     t.datetime "created_at", null: false

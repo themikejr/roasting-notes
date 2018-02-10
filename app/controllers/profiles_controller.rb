@@ -28,6 +28,9 @@ class ProfilesController < ApplicationController
     @profile["development_time"] = json_object["computed"]["finishphasetime"]
     @profile["development_time_percentage"] = percentage(@profile["development_time"], @profile["roast_length"])
 
+    @profile["charge_temp"] = json_object["computed"]["CHARGE_BT"]
+    @profile["drop_temp"] = json_object["computed"]["DROP_BT"]
+
     @profile.save
     redirect_to @profile
   end

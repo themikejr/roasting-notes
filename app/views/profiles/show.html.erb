@@ -1,8 +1,10 @@
-<p>
-  <strong>Coffee name:</strong>
-    <%= @profile.coffee_name %>
-</p>
- 
+<h2> <%= @profile.coffee_name %> </h2>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: <%= number_to_percentage(@profile.dry_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="progress-bar bg-success" role="progressbar" style="width: <%= number_to_percentage(@profile.malliard_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="progress-bar bg-danger" role="progressbar" style="width: <%= number_to_percentage(@profile.development_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
+</div> 
+
 <p>
   <strong>Origin Country:</strong>
     <%= @profile.origin_country %>
@@ -28,8 +30,14 @@
     <%= number_to_percentage(@profile.development_time_percentage * 100, precision: 1)%>
 </p>
 
-<div class="progress">
-  <div class="progress-bar" role="progressbar" style="width: <%= number_to_percentage(@profile.dry_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
-  <div class="progress-bar bg-success" role="progressbar" style="width: <%= number_to_percentage(@profile.malliard_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
-  <div class="progress-bar bg-danger" role="progressbar" style="width: <%= number_to_percentage(@profile.development_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
+<p>
+  <strong>Charge temp:</strong>
+    <%= @profile.charge_temp %>
+</p>
+
+<p>
+  <strong>Drop temp:</strong>
+    <%= @profile.drop_temp %>
+</p>
+
+
