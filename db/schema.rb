@@ -10,16 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180210144044) do
+ActiveRecord::Schema.define(version: 20180210184236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "profiles", force: :cascade do |t|
-    t.string "coffee_name"
-    t.string "origin_country"
-    t.string "origin_farm"
+  create_table "origins", force: :cascade do |t|
+    t.string "name"
+    t.string "region"
+    t.string "country"
     t.string "processing_type"
+    t.integer "elevation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.bigint "origin_id"
     t.integer "batch_number"
     t.integer "roast_length"
     t.integer "turning_point"
@@ -40,11 +47,13 @@ ActiveRecord::Schema.define(version: 20180210144044) do
     t.string "roast_length_pretty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["origin_id"], name: "index_profiles_on_origin_id"
   end
 
   create_table "tastings", force: :cascade do |t|
     t.bigint "profile_id"
     t.bigint "user_id"
+    t.bigint "origin_id"
     t.float "dry_fragrance"
     t.float "wet_aroma"
     t.float "brightness"
@@ -59,6 +68,7 @@ ActiveRecord::Schema.define(version: 20180210144044) do
     t.string "mouth_notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["origin_id"], name: "index_tastings_on_origin_id"
     t.index ["profile_id"], name: "index_tastings_on_profile_id"
     t.index ["user_id"], name: "index_tastings_on_user_id"
   end

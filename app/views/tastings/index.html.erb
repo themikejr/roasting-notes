@@ -1,0 +1,24 @@
+<h1>Tastings</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Coffee</th>
+      <th>Country</th>
+      <th>User</th>
+      <th>View profile</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tastings.each do |tasting| %>
+      <tr>
+        <td><%= tasting.origin.name %></td>
+        <td><%= tasting.origin.country %></td>
+        <td><%= tasting.user.name %></td>
+        <td><%= link_to 'View', tasting_path(tasting) %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>

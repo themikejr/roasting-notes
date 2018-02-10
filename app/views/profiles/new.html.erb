@@ -1,22 +1,12 @@
 <h1>Import a new Roast Profile</h1>
 
 <%= form_with scope: :profile, url: profiles_path, local: true do |form| %>
-  <p>
-    <%= form.label :coffee_name %><br>
-    <%= form.text_field :coffee_name %>
-  </p>
- 
-  <p>
-    <%= form.label :origin_country %><br>
-    <%= form.text_field :origin_country %>
-  </p>
-
+  <%= form.select :origin_id, options_from_collection_for_select(Origin.all, "id", "name") %>
   <p>
     <%= form.label :artisan_json %><br>
     <%= form.text_area :artisan_json %>
   </p>
 
- 
   <p>
     <%= form.submit %>
   </p>

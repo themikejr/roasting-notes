@@ -4,6 +4,7 @@ class CreateTastings < ActiveRecord::Migration[5.1]
 
       t.references :profile, foreign_key: true
       t.references :user, foreign_key: true
+      t.references :origin, foreign_key: true
 
       t.float :dry_fragrance
       t.float :wet_aroma

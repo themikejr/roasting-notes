@@ -1,0 +1,32 @@
+<h1>Create a new coffee</h1>
+
+<%= form_with scope: :origin, url: origins_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :region %><br>
+    <%= form.text_field :region %>
+  </p>
+
+  <p>
+    <%= form.label :country %><br>
+    <%= form.text_field :country %>
+  </p>
+
+  <p>
+    <%= form.label :proecessing_type %><br>
+    <%= form.text_field :processing_type %>
+  </p>
+
+  <p>
+    <%= form.label :elevation %><br>
+    <%= form.text_field :elevation %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

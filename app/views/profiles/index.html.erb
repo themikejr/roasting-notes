@@ -1,5 +1,5 @@
 <h1>Profiles</h1>
- 
+
 <table class="table">
   <thead>
     <tr>
@@ -9,15 +9,15 @@
       <th>View profile</th>
     </tr>
   </thead>
- 
+
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        <td><%= profile.coffee_name %></td>
-        <td><%= profile.origin_country %></td>
+        <td><%= profile.origin.name %></td>
+        <td><%= profile.origin.country %></td>
         <td><%= profile.roast_length_pretty %></td>
         <td><%= link_to 'View', profile_path(profile) %></td>
       </tr>
      <% end %>
-  </tbody>  
+  </tbody>
 </table>

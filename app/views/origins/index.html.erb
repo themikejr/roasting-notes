@@ -1,0 +1,28 @@
+<h1>Coffees</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Coffee</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>Processing Type</th>
+      <th>View profile</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @origins.each do |origin| %>
+      <tr>
+        <td><%= origin.name %></td>
+        <td><%= origin.region %></td>
+        <td><%= origin.country %></td>
+        <td><%= origin.processing_type %></td>
+        <td><%= link_to 'View', origin_path(origin) %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+
+</table>

@@ -1,0 +1,18 @@
+<h1>Record a new tasting</h1>
+
+<%= form_with scope: :tasting, url: tastings_path, local: true do |form| %>
+  <%= form.select :origin_id, options_from_collection_for_select(Origin.all, "id", "name") %>
+  <p>
+    <%= form.label :mouth_notes %><br>
+    <%= form.text_area :mouth_notes %>
+  </p>
+
+  <p>
+    <%= form.label :nose_notes %><br>
+    <%= form.text_area :nose_notes %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

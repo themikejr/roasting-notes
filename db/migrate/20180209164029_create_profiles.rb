@@ -1,6 +1,8 @@
 class CreateProfiles < ActiveRecord::Migration[5.1]
   def change
     create_table :profiles do |t|
+      t.references :origin, foreign_key: true
+
       t.string :coffee_name
       t.string :origin_country
       t.string :origin_farm

@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
   def new
   end
 
-  def create 
+  def create
     @profile = Profile.new(profile_params)
     json_object = JSON.parse(@profile.artisan_json)
     @profile["roast_length"] = json_object["computed"]["totaltime"]
@@ -37,7 +37,7 @@ class ProfilesController < ApplicationController
 
   private
     def profile_params
-      params.require(:profile).permit(:coffee_name, :origin_country, :artisan_json)
+      params.require(:profile).permit(:origin_id, :origin_country, :artisan_json)
     end
 
     def seconds_to_time(seconds)
@@ -45,10 +45,7 @@ class ProfilesController < ApplicationController
     end
 
     def percentage(part, whole)
-      puts "part", part
-      puts "whole", whole
-      puts "attempt", part / whole
-      part / whole 
+      part / whole
     end
 
 
