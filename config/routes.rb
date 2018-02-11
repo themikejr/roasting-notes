@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :origins
   resources :tastings
 
-  resources :profiles do
+  resources :batches do
     resources :tastings
   end
 end

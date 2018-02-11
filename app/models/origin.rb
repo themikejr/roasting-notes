@@ -1,4 +1,4 @@
 class Origin < ApplicationRecord
   has_many :tastings
-  has_many :profiles
+  has_many :batches
 end

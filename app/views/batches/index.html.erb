@@ -1,0 +1,25 @@
+<h1>Batches</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Coffee</th>
+      <th>Origin</th>
+      <th>Batch Number</th>
+      <th>View Batch</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @batches.each do |batch| %>
+      <tr>
+        <td><%= batch.origin.name %></td>
+        <td><%= batch.origin.country %></td>
+        <td><%= batch.batch_number %></td>
+        <td><%= link_to 'View', batch_path(batch) %></td>
+      </tr>
+     <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to 'Import a batch', new_batch_path %></p>

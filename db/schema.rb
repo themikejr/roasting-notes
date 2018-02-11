@@ -10,22 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211005535) do
+ActiveRecord::Schema.define(version: 20180211010704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "origins", force: :cascade do |t|
-    t.string "name"
-    t.string "region"
-    t.string "country"
-    t.string "processing_type"
-    t.integer "elevation"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "profiles", force: :cascade do |t|
+  create_table "batches", force: :cascade do |t|
     t.bigint "origin_id"
     t.integer "batch_number"
     t.integer "roast_length"
@@ -49,11 +39,21 @@ ActiveRecord::Schema.define(version: 20180211005535) do
     t.datetime "updated_at", null: false
     t.integer "start_weight"
     t.integer "end_weight"
-    t.index ["origin_id"], name: "index_profiles_on_origin_id"
+    t.index ["origin_id"], name: "index_batches_on_origin_id"
+  end
+
+  create_table "origins", force: :cascade do |t|
+    t.string "name"
+    t.string "region"
+    t.string "country"
+    t.string "processing_type"
+    t.integer "elevation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tastings", force: :cascade do |t|
-    t.bigint "profile_id"
+    t.bigint "batch_id"
     t.bigint "user_id"
     t.bigint "origin_id"
     t.float "dry_fragrance"
@@ -70,8 +70,8 @@ ActiveRecord::Schema.define(version: 20180211005535) do
     t.string "mouth_notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["batch_id"], name: "index_tastings_on_batch_id"
     t.index ["origin_id"], name: "index_tastings_on_origin_id"
-    t.index ["profile_id"], name: "index_tastings_on_profile_id"
     t.index ["user_id"], name: "index_tastings_on_user_id"
   end
 
@@ -93,6 +93,6 @@ ActiveRecord::Schema.define(version: 20180211005535) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "tastings", "profiles"
+  add_foreign_key "tastings", "batches"
   add_foreign_key "tastings", "users"
 end

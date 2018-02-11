@@ -1,6 +1,6 @@
-<h1>Import a new Roast Profile</h1>
+<h1>Import a new Batch</h1>
 
-<%= form_with scope: :profile, url: profiles_path, local: true do |form| %>
+<%= form_with scope: :batch, url: batches_path, local: true do |form| %>
   <%= form.select :origin_id, options_from_collection_for_select(Origin.all, "id", "name") %>
 
   <p>

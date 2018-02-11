@@ -11,12 +11,12 @@ class TastingsController < ApplicationController
   end
 
   def create
-    if params[:profile_id]
-      @profile = Profile.find(params[:profile_id])
-      @tasting = @profile.tastings.build(tasting_params)
+    if params[:batch_id]
+      @batch = Batch.find(params[:batch_id])
+      @tasting = @batch.tastings.build(tasting_params)
       @tasting["user_id"] = current_user["id"]
       @tasting.save
-      redirect_to profile_path(@profile)
+      redirect_to batch_path(@batch)
     else
       puts tasting_params
       @tasting = Tasting.new(tasting_params)
@@ -28,6 +28,6 @@ class TastingsController < ApplicationController
 
   private
     def tasting_params
-      params.require(:tasting).permit(:user_id, :origin_id, :profile_id, :nose_notes, :mouth_notes)
+      params.require(:tasting).permit(:user_id, :origin_id, :batch_id, :nose_notes, :mouth_notes)
     end
 end
