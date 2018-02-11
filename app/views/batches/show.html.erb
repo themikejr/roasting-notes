@@ -53,35 +53,27 @@
 
 
 <h2>Tastings</h2>
-<% @batch.tastings.each do |tasting| %>
-  <p>
-    <strong>Taster:</strong>
-    <%= tasting.user.name %>
-  </p>
 
-  <p>
-    <strong>Nose:</strong>
-    <%= tasting.nose_notes %>
-  </p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Total score</th>
+      <th>User</th>
+      <th>View tasting</th>
+    </tr>
+  </thead>
 
-  <p>
-    <strong>Mouth:</strong>
-    <%= tasting.mouth_notes %>
-  </p>
-<% end %>
+  <tbody>
+    <% @batch.tastings.each do |tasting| %>
+      <tr>
+        <td><%= tasting.total_score %></td>
+        <td><%= tasting.user.name %></td>
+        <td><%= link_to 'View', tasting_path(tasting) %></td>
+      </tr>
+    <% end %>
 
-<h2>Add a tasting:</h2>
-<%= form_with(model: [ @batch, @batch.tastings.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :nose_notes %><br>
-    <%= form.text_area :nose_notes %>
-  </p>
+  </tbody>
+</table>
 
-  <p>
-    <%= form.label :mouth_notes %><br> <%= form.text_area :mouth_notes %> </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
 
 <%= link_to 'See all batches', batches_path %>
