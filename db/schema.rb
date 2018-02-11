@@ -66,7 +66,8 @@ ActiveRecord::Schema.define(version: 20180211010704) do
     t.float "balance"
     t.float "sweetness"
     t.float "uniformity"
-    t.float "cleaniness"
+    t.float "cleanliness"
+    t.float "total_score"
     t.string "nose_notes"
     t.string "mouth_notes"
     t.datetime "created_at", null: false

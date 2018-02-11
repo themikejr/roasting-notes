@@ -15,7 +15,7 @@ class CreateTastings < ActiveRecord::Migration[5.1]
       t.float "balance"
       t.float "sweetness"
       t.float "uniformity"
-      t.float "cleaniness"
+      t.float "cleanliness"
 
       t.string :nose_notes
       t.string :mouth_notes

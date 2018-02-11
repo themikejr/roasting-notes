@@ -6,7 +6,7 @@
 
   <div class="container">
     <div class="row">
-      <div class class="col-md">
+      <div class="col-md">
         <div class="form-group">
           <%= form.label :dry_fragrance %>
           <%= number_field(:tasting, :dry_fragrance, in: 6.0..10.0, step: 0.25, class: "form-control") %>
@@ -16,9 +16,7 @@
           <%= form.label :wet_aroma %>
           <%= number_field(:tasting, :wet_aroma, in: 6.0..10.0, step: 0.25, class: "form-control") %>
         </div>
-      </div>
 
-      <div class class="col-md">
         <div class="form-group">
           <%= form.label :flavor %>
           <%= number_field(:tasting, :flavor, in: 6.0..10.0, step: 0.25, class: "form-control") %>
@@ -28,6 +26,38 @@
           <%= form.label :aftertaste %>
           <%= number_field(:tasting, :aftertaste, in: 6.0..10.0, step: 0.25, class: "form-control") %>
         </div>
+        <div class="form-group">
+          <%= form.label :acidity %>
+          <%= number_field(:tasting, :acidity, in: 6.0..10.0, step: 0.25, class: "form-control") %>
+        </div>
+        <div class="form-group">
+          <%= form.label :body %>
+          <%= number_field(:tasting, :body, in: 6.0..10.0, step: 0.25, class: "form-control") %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :balance %>
+          <%= number_field(:tasting, :balance, in: 6.0..10.0, step: 0.25, class: "form-control") %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :sweetness %>
+          <%= number_field(:tasting, :sweetness, in: 6.0..10.0, step: 0.25, class: "form-control") %>
+        </div>
+        <div class="form-group">
+          <%= form.label :uniformity %>
+          <%= number_field(:tasting, :uniformity, in: 6.0..10.0, step: 0.25, class: "form-control") %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :cleanliness %>
+          <%= number_field(:tasting, :cleanliness, in: 6.0..10.0, step: 0.25, class: "form-control") %>
+        </div>
+
+
+
+
+
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Coffee</th>
-      <th>Country</th>
+      <th>Total score</th>
       <th>User</th>
       <th>View tasting</th>
     </tr>
@@ -14,7 +14,7 @@
     <% @tastings.each do |tasting| %>
       <tr>
         <td><%= tasting.origin.name %></td>
-        <td><%= tasting.origin.country %></td>
+        <td><%= tasting.total_score %></td>
         <td><%= tasting.user.name %></td>
         <td><%= link_to 'View', tasting_path(tasting) %></td>
       </tr>
