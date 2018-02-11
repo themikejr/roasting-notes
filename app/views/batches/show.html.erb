@@ -1,5 +1,5 @@
 <h2> <%= @batch.origin.name %> </h2>
-<p> Batch: <%= @batch.batch_number %> </p>
+<p> Batch: <%= @batch.batch_number %>,  <%= @batch.roast_date %></p>
 <div class="progress">
   <div class="progress-bar" role="progressbar" style="width: <%= number_to_percentage(@batch.dry_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
   <div class="progress-bar bg-success" role="progressbar" style="width: <%= number_to_percentage(@batch.malliard_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>

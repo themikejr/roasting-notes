@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180211010704) do
     t.string "roast_length_pretty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "roast_date"
     t.integer "start_weight"
     t.integer "end_weight"
     t.index ["origin_id"], name: "index_batches_on_origin_id"

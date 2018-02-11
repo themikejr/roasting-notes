@@ -30,6 +30,7 @@ class BatchesController < ApplicationController
 
     @batch["charge_temp"] = json_object["computed"]["CHARGE_BT"]
     @batch["drop_temp"] = json_object["computed"]["DROP_BT"]
+    @batch["roast_date"] = DateTime.strptime(json_object["roastdate"],"%a %b %d %Y")
 
     @batch.save
     redirect_to @batch
@@ -37,7 +38,7 @@ class BatchesController < ApplicationController
 
   private
     def batch_params
-	    params.require(:batch).permit(:origin_id, :batch_number, :start_weight, :end_weight, :artisan_json)
+	    params.require(:batch).permit(:origin_id, :batch_number, :start_weight, :end_weight, :roast_date, :artisan_json)
     end
 
     def seconds_to_time(seconds)
