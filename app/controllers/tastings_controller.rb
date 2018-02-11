@@ -1,4 +1,6 @@
 class TastingsController < ApplicationController
+  before_action :authenticate_user!
+
   SCAA_FIELDS = [:dry_fragrance,
 		 :wet_aroma,
 		 :flavor,
