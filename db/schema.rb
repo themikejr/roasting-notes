@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180210184236) do
+ActiveRecord::Schema.define(version: 20180211005535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20180210184236) do
     t.string "roast_length_pretty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "start_weight"
+    t.integer "end_weight"
     t.index ["origin_id"], name: "index_profiles_on_origin_id"
   end
 

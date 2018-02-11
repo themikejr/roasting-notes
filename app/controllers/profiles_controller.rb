@@ -37,7 +37,7 @@ class ProfilesController < ApplicationController
 
   private
     def profile_params
-      params.require(:profile).permit(:origin_id, :batch_number, :artisan_json)
+	    params.require(:profile).permit(:origin_id, :batch_number, :start_weight, :end_weight, :artisan_json)
     end
 
     def seconds_to_time(seconds)

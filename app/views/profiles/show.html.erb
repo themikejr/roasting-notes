@@ -41,6 +41,17 @@
     <%= @profile.drop_temp %>
 </p>
 
+<p>
+  <strong>Start weight:</strong>
+    <%= @profile.start_weight %> grams
+</p>
+
+<p>
+  <strong>End weight:</strong>
+  <%= @profile.end_weight %> grams
+</p>
+
+
 <h2>Tastings</h2>
 <% @profile.tastings.each do |tasting| %>
   <p>
