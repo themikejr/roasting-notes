@@ -1,6 +1,20 @@
-<h3>Welcome to roasting notes.</h3>
-<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+<h3>Welcome to RoastingNotes™.</h3>
 
-<p><%= link_to 'Create a new coffee', new_origin_path %></p>
-<p><%= link_to 'Record a new tasting', new_tasting_path %></p>
-<p><%= link_to 'Import a new batch', new_batch_path %></p>
+<p>RoastingNotes™ is a place for you to store, analyze, and evaluate coffee roasting data
+from <a href="https://github.com/artisan-roaster-scope/artisan/blob/master/README.md" >Artisan</a> roasting software.</p>
+
+<h4>Getting started is easy.</h4>
+<ol>
+  <li>First, <%= link_to 'add a new coffee', new_origin_path %>.</li>
+  <li>Then <%= link_to 'upload a batch from artisan', new_batch_path %>.</li>
+  <li>Finally, <%= link_to 'evaluate the batch', new_tasting_path %> by recording a tasting.</li>
+</ol>
+
+<h4>Some stats:</h4>
+<ul>
+  <li> <%= User.count %> user(s) registered. </li>
+  <li> <%= Origin.count %> coffee(s). </li>
+  <li> <%= Batch.count %> batch(es) imported. </li>
+  <li> <%= Tasting.count %> tasting(s) recorded. </li>
+</ul>
+
