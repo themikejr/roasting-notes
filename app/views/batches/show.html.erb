@@ -1,5 +1,12 @@
 <h2> <%= @batch.origin.name %> </h2>
-<p> Batch: <%= @batch.batch_number %>,  <%= localize(@batch.roast_date, :format => :concise) %></p>
+<p>
+  Batch: <%= @batch.batch_number %>,  <%= localize(@batch.roast_date, :format => :concise) %>
+  <% if @batch.artisan_image_id? %>
+    <a href="<%=attachment_url(@batch, :artisan_image) %>">
+      View artisan chart
+    </a>
+   <% end %>
+</p>
 <div class="progress">
   <div class="progress-bar" role="progressbar" style="width: <%= number_to_percentage(@batch.dry_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
   <div class="progress-bar bg-success" role="progressbar" style="width: <%= number_to_percentage(@batch.malliard_time_percentage * 100, precision: 0) %>" aria-valuemin="0" aria-valuemax="100"></div>
@@ -50,7 +57,6 @@
   <strong>End weight:</strong>
   <%= @batch.end_weight %> grams
 </p>
-
 
 <h2>Tastings</h2>
 

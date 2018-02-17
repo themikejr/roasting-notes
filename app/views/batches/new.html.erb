@@ -1,6 +1,6 @@
 <h1>Import a new Batch</h1>
 
-<%= form_with scope: :batch, url: batches_path, local: true do |form| %>
+<%= form_for @batch, :url => {:action => :create, :method => :post}, :html => {:multipart => true} do |form| %>
   <%= form.select :origin_id, options_from_collection_for_select(Origin.all, "id", "name") %>
 
   <p>
@@ -22,6 +22,11 @@
   <p>
     <%= form.label :artisan_json %><br>
     <%= form.text_area :artisan_json %>
+  </p>
+
+  <p>
+    <%= form.label :artisan_image%>
+    <%= form.attachment_field :artisan_image %>
   </p>
 
   <p>

@@ -12,6 +12,7 @@ class BatchesController < ApplicationController
   end
 
   def new
+    @batch = Batch.new
   end
 
   def create
@@ -38,7 +39,7 @@ class BatchesController < ApplicationController
 
   private
     def batch_params
-	    params.require(:batch).permit(:origin_id, :batch_number, :start_weight, :end_weight, :roast_date, :artisan_json)
+	    params.require(:batch).permit(:origin_id, :batch_number, :start_weight, :end_weight, :roast_date, :artisan_json, :artisan_image)
     end
 
     def seconds_to_time(seconds)

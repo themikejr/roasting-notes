@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211010704) do
+ActiveRecord::Schema.define(version: 20180217150724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(version: 20180211010704) do
     t.datetime "roast_date"
     t.integer "start_weight"
     t.integer "end_weight"
+    t.string "artisan_image_id"
+    t.string "artisan_image_filename"
+    t.string "artisan_image_content_size"
+    t.string "artisan_image_content_type"
     t.index ["origin_id"], name: "index_batches_on_origin_id"
   end
 
