@@ -35,4 +35,4 @@ en:
 en:
   time:
     formats:
-      concise: '%d/%m/%y'
+      concise: '%m/%d/%y'
