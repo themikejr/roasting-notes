@@ -58,28 +58,29 @@
   <%= @batch.end_weight %> grams
 </p>
 
-<h2>Tastings</h2>
+<% if @batch.tastings.count > 0 %>
+  <h2>Tastings</h2>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Total score</th>
-      <th>User</th>
-      <th>View tasting</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @batch.tastings.each do |tasting| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= tasting.total_score %></td>
-        <td><%= tasting.user.name %></td>
-        <td><%= link_to 'View', tasting_path(tasting) %></td>
+        <th>Total score</th>
+        <th>User</th>
+        <th>View tasting</th>
       </tr>
-    <% end %>
+    </thead>
 
-  </tbody>
-</table>
+    <tbody>
+      <% @batch.tastings.each do |tasting| %>
+        <tr>
+          <td><%= tasting.total_score %></td>
+          <td><%= tasting.user.name %></td>
+          <td><%= link_to 'View', tasting_path(tasting) %></td>
+        </tr>
+      <% end %>
 
+    </tbody>
+  </table>
+<% end %>
 
 <%= link_to 'See all batches', batches_path %>
