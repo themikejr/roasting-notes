@@ -57,25 +57,26 @@
         </div>
 
         <div class="form-group">
-          <%= form.label :mouth_notes %><br>
-          <%= form.text_area :mouth_notes, class: "form-control" %>
-        </div>
-
-
-        <div class="form-group">
           <%= form.label :nose_notes %><br>
           <%= form.text_area :nose_notes, class: "form-control" %>
         </div>
 
+        <div class="form-group">
+          <%= form.label :mouth_notes %><br>
+          <%= form.text_area :mouth_notes, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+         <%= form.submit %>
+      </div>
+
+      <% end %>
 
       </div>
     </div>
   </div>
 
-
   </div>
 
 
 
-    <%= form.submit %>
-<% end %>
